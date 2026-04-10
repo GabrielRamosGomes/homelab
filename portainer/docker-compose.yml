@@ -1,11 +1,35 @@
+configs:
+  ts-serve:
+    content: |
+      {"TCP":{"443":{"HTTPS":true}},
+      "Web":{"$${TS_CERT_DOMAIN}:443":
+          {"Handlers":{"/":
+          {"Proxy":"http://127.0.0.1:3000"}}}},
+      "AllowFunnel":{"$${TS_CERT_DOMAIN}:443":false}}
+
 services:
   tailscale:
     image: ${TAILSCALE_IMAGE}
     container_name: tailscale-${SERVICE}
     hostname: ${SERVICE}
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+      - TS_ENABLE_HEALTH_CHECK=true
+      - TS_LOCAL_ADDR_PORT=127.0.0.1:41234
+      - TS_AUTH_ONCE=true
+    configs:
+      - source: ts-serve
+        target: /config/serve.json
+    volumes:
+      - ./tailscale/config:/config
+      - ./tailscale/ts/state:/var/lib/tailscale
+    restart: unless-stopped
     env_file:
       - .env
-      - ../.env.main
+      - ../.env
+
   portainer:
     image: portainer/portainer-ce:lts
     container_name: ${SERVICE}
@@ -17,4 +41,4 @@ services:
       - ./data:/data
     env_file:
       - .env
-      - ../.env.main
+      - ../.env
