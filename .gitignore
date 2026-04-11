@@ -4,7 +4,6 @@
 .env.production.local
 .env.local
 
-
 # Portainer
 /portainer/data
 /portainer/tailscale
