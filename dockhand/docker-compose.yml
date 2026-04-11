@@ -4,7 +4,7 @@ configs:
       {"TCP":{"443":{"HTTPS":true}},
       "Web":{"${TS_CERT_DOMAIN}:443":
           {"Handlers":{"/":
-          {"Proxy":"http://127.0.0.1:8080"}}}},
+          {"Proxy":"http://127.0.0.1:3000"}}}},
       "AllowFunnel":{"${TS_CERT_DOMAIN}:443":false}}
 
 services:
@@ -17,6 +17,7 @@ services:
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_USERSPACE=false
       - TS_ENABLE_HEALTH_CHECK=true
+      - TS_SERVE_CONFIG=/config/serve.json
       - TS_LOCAL_ADDR_PORT=127.0.0.1:41234
       - TS_AUTH_ONCE=true
     configs:
