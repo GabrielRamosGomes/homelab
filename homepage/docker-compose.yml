@@ -1,15 +1,60 @@
+configs:
+  ts-serve:
+    content: |
+      {"TCP":{"443":{"HTTPS":true}},
+      "Web":{"$${TS_CERT_DOMAIN}:443":
+          {"Handlers":{"/":
+          {"Proxy":"http://127.0.0.1:3000"}}}},
+      "AllowFunnel":{"$${TS_CERT_DOMAIN}:443":false}}
+
 services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale-${SERVICE}
+    hostname: ${SERVICE}
+    environment:
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_USERSPACE=false
+      - TS_ENABLE_HEALTH_CHECK=true
+      - TS_LOCAL_ADDR_PORT=127.0.0.1:41234
+      - TS_AUTH_ONCE=true
+    configs:
+      - source: ts-serve
+        target: /config/serve.json
+    volumes:
+      - ./tailscale/config:/config
+      - ./tailscale/ts/state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:41234/healthz"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: always
+
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
-    container_name: homepage
+    network_mode: service:tailscale
+    container_name: ${SERVICE}
     environment:
-      HOMEPAGE_ALLOWED_HOSTS: homepage.${TAILNET_NAME}.ts.net
-    ports:
-      - 3000:3000
+      - HOMEPAGE_ALLOWED_HOSTS=${ALLOWED_HOSTS}
     volumes:
-      - ./config:/app/config
+      - ./${SERVICE}-data/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    restart: unless-stopped
-    env_file:
-      - ../.env
-      - ./.env
+    depends_on:
+      tailscale:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "pgrep", "-f", "next-server"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    restart: always
+    env_file: # needs to be here so environment variables are available for config templating
+      - .env

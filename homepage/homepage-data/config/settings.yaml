@@ -1,0 +1,23 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+title: Raspberry Pi Dashboard
+theme: dark
+
+layout:
+  Media:
+    header: true
+  
+  Management:
+    header: true
+
+  Network:
+    header: true
+
+  Bookmarks:
+    style: row
+    columns: 3
+    header: true
+
+  useEqualHeights: true
