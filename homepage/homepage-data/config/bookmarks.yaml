@@ -12,3 +12,9 @@
     - Homepage Docs:
         - icon: homepage.png
           href: https://gethomepage.dev/
+
+
+- Downloads:
+    - Metube:
+        - icon: metube.png
+          href: {{HOMEPAGE_VAR_METUBE_URL}}
