@@ -45,15 +45,16 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - TZ=Europe/Lisbon
     volumes:
       - /mnt/storage/Youtube:/downloads
     depends_on:
       tailscale:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "pgrep", "-f", "${SERVICE}"]
-      interval: 1m
-      timeout: 10s
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8081"]
+      interval: 30s
+      timeout: 5s
       retries: 3
-      start_period: 30s
+      start_period: 20s
     restart: always
