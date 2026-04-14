@@ -21,9 +21,4 @@ layout:
     style: column
     columns: 2
 
-  Developer Resources:
-    header: true
-    style: row
-    columns: 3
-
 useEqualHeights: true
