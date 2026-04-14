@@ -10,7 +10,7 @@
         container: filebrowser
         widget:
           type: filebrowser
-          url: http://100.69.18.61/
+          url: {{HOMEPAGE_VAR_FILEBROWSER_URL}}
           username: {{HOMEPAGE_VAR_FILEBROWSER_USER}}
           password: {{HOMEPAGE_VAR_FILEBROWSER_PASSWORD}}
 
