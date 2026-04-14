@@ -1,0 +1,27 @@
+services:
+  docktail:
+    image: ghcr.io/marvinvr/docktail:latest
+    container_name: docktail-${SERVICE}
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/tailscale:/var/run/tailscale
+    environment:
+      - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
+      - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: ${SERVICE}
+    restart: unless-stopped
+    environment:
+      - DOMAIN=${VAULTWARDEN_DOMAIN}
+    volumes:
+      - ./${SERVICE}-data:/data
+    depends_on:
+      - docktail
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=${SERVICE}"
+      - "docktail.service.port=80"
+      - "docktail.service.service-protocol=https"

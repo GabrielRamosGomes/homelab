@@ -22,3 +22,6 @@ adguardhome/adguardhome-data
 
 # Homepage
 homepage/homepage-data/config/logs
+
+# Vaultwarden
+vaultwarden/vaultwarden-data

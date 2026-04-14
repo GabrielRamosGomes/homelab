@@ -2,19 +2,15 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/bookmarks
 
-- Developer:
+- Developer Resources:
     - Github:
         - icon: github.png
           href: https://github.com/GabrielRamosGomes
+    
     - Router:
         - icon: router.png
           href: http://192.168.1.1/index.asp
-    - Homepage Docs:
+    
+    - Docs:
         - icon: homepage.png
           href: https://gethomepage.dev/
-
-
-- Downloads:
-    - Metube:
-        - icon: metube.png
-          href: {{HOMEPAGE_VAR_METUBE_URL}}

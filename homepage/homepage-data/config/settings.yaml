@@ -6,18 +6,24 @@ title: Raspberry Pi Dashboard
 theme: dark
 
 layout:
-  Media:
-    header: true
-  
-  Management:
-    header: true
-
   Network:
     header: true
+    style: column
+    columns: 2
 
-  Bookmarks:
+  Management:
+    header: true
+    style: column
+    columns: 3
+
+  Media:
+    header: true
+    style: column
+    columns: 2
+
+  Developer Resources:
+    header: true
     style: row
     columns: 3
-    header: true
 
-  useEqualHeights: true
+useEqualHeights: true
