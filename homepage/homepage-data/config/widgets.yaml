@@ -4,9 +4,22 @@
 
 - resources:
     cpu: true
-    memory: true
+    cputemp: true
+    uptime: true
+
+- resources:
     disk: /
+    memory: true
 
 - search:
     provider: duckduckgo
     target: _blank
+    showSearchSuggestions: true
+
+- datetime:
+    text_size: 2xl
+    format:
+        timeStyle: short
+        hourCycle: h23
+
+
