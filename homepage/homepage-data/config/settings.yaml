@@ -5,6 +5,10 @@
 title: Homelab Dashboard
 theme: dark
 
+useEqualHeights: true
+disableCollapse: true
+headerStyle: clean
+
 layout:
   Network:
     header: true
@@ -21,6 +25,4 @@ layout:
     style: column
     columns: 2
 
-useEqualHeights: true
-disableCollapse: true
-headerStyle: clean
+

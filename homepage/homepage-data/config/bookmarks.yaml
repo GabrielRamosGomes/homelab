@@ -35,3 +35,7 @@
     - Gmail:
         - icon: gmail.png
           href: https://mail.google.com/mail/u/0/#inbox
+
+    - Google Docs:
+        - icon: google-docs.png
+          href: https://docs.google.com/document/u/0/

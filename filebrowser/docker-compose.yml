@@ -1,16 +1,4 @@
-services:
-  docktail:
-    image: ghcr.io/marvinvr/docktail:latest
-    container_name: docktail-${SERVICE}
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /var/run/tailscale:/var/run/tailscale
-    environment:
-      - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
-      - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
-
-  
+services:  
   filebrowser:
     image: filebrowser/filebrowser:latest
     container_name: ${SERVICE}
@@ -21,8 +9,6 @@ services:
     environment:
       - FB_ROOT=/srv
       - FB_DATABASE=/database/filebrowser.db
-    depends_on:
-      - docktail
     restart: always
     labels:
       - "docktail.service.enable=true"

@@ -1,15 +1,4 @@
 services:
-  docktail:
-    image: ghcr.io/marvinvr/docktail:latest
-    restart: unless-stopped
-    container_name: docktail-${SERVICE}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /var/run/tailscale:/var/run/tailscale
-    environment:
-      - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
-      - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
-
   metube:
     image: ghcr.io/alexta69/metube
     container_name: ${SERVICE}
@@ -19,8 +8,6 @@ services:
       - TZ=Europe/Lisbon
     volumes:
       - /mnt/storage/Youtube:/downloads
-    depends_on:
-      - docktail
     healthcheck:
       test: ["CMD", "curl", "-f", "http://127.0.0.1:8081"]
       interval: 30s

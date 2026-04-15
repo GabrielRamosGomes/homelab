@@ -1,15 +1,4 @@
 services:
-  docktail:
-    image: ghcr.io/marvinvr/docktail:latest
-    container_name: docktail-${SERVICE}
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /var/run/tailscale:/var/run/tailscale
-    environment:
-      - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
-      - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
-
   adguardhome:
     image: adguard/adguardhome:latest
     container_name: ${SERVICE}
@@ -19,8 +8,6 @@ services:
     volumes:
       - ./${SERVICE}-data/work:/opt/adguardhome/work
       - ./${SERVICE}-data/config:/opt/adguardhome/conf
-    depends_on:
-      - docktail
     healthcheck:
       test: ["CMD", "pgrep", "-f", "${SERVICE}"]
       interval: 1m
