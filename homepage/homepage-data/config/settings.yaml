@@ -9,6 +9,13 @@ useEqualHeights: true
 disableCollapse: true
 headerStyle: clean
 
+background:
+  image: /images/background.png
+  blur: sm
+  saturate: 120
+  brightness: 40
+  opacity: 20
+
 layout:
   Network:
     header: true

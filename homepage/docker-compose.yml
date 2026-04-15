@@ -6,6 +6,7 @@ services:
       - HOMEPAGE_ALLOWED_HOSTS=${ALLOWED_HOSTS}
     volumes:
       - ./${SERVICE}-data/config:/app/config
+      - ./images:/app/public/images
       - /var/run/docker.sock:/var/run/docker.sock:ro
     healthcheck:
       test: ["CMD", "pgrep", "-f", "next-server"]
