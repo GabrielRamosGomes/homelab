@@ -13,7 +13,7 @@
 
 - search:
     provider: duckduckgo
-    target: _blank
+    target: _self
     showSearchSuggestions: true
 
 - datetime:
