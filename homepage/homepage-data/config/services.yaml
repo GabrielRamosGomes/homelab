@@ -56,6 +56,18 @@
           username: {{HOMEPAGE_VAR_ADGUARD_USER}}
           password: {{HOMEPAGE_VAR_ADGUARD_PASSWORD}}
 
+    - Speedtest Tracker:
+        href: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_URL}}
+        description: Internet speed monitoring.
+        icon: speedtest-tracker
+        container: speedtest-tracker
+        widget:
+          type: speedtest
+          url: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_URL}}
+          version: 2
+          key: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_API_KEY}}
+         
+
     - Tailscale:
         href: https://login.tailscale.com/admin/machines
         description: Tailscale admin panel.
