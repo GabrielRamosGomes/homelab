@@ -25,3 +25,6 @@ homepage/homepage-data/config/logs
 
 # Vaultwarden
 vaultwarden/vaultwarden-data
+
+# ConvertX
+convertx/convertx-data
