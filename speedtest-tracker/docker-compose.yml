@@ -13,9 +13,19 @@ services:
             - ADMIN_EMAIL=${ADMIN_EMAIL}
             - DB_CONNECTION=sqlite
             - SPEEDTEST_SCHEDULE=0 */2 * * * # Every 2h
-            - APP_TIMEZONE=Europe/Lisbon
+            - APP_TIMEZONE=${TIMEZONE}
+            - DISPLAY_TIMEZONE=${TIMEZONE}
+            - TZ=${TIMEZONE}
+            - PRUNE_RESULTS_OLDER_THAN=7 # Prune results older than 7 days
+            - DATETIME_FORMAT=d-m-Y H:i # 24h clock
         volumes:
             - ./${SERVICE}-data:/config
+        healthcheck:
+            test: curl -fSs ${APP_URL}/api/healthcheck | jq -r .message || exit 1
+            interval: 10s
+            retries: 3
+            start_period: 30s
+            timeout: 10s
         labels:
           - "docktail.service.enable=true"
           - "docktail.service.name=${SERVICE}"
