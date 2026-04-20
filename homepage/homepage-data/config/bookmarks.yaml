@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/bookmarks
 
-- 🖥️ Developer Resources:
+- Developer Resources:
     - Github:
         - icon: si-github
           href: https://github.com/GabrielRamosGomes
@@ -19,7 +19,7 @@
         - icon: chatgpt.png
           href: https://chat.openai.com/
 
-- ⭐ Favorites:
+- Favorites:
     - Youtube:
         - icon: youtube.png
           href: https://www.youtube.com/
@@ -40,7 +40,7 @@
         - icon: google-docs.png
           href: https://docs.google.com/document/u/0/
 
-- 🏴‍☠️ Sailing the 7 Seas:
+- Sailing the 7 Seas:
     - Megathread:
         - icon: reddit.png
           href: https://www.reddit.com/r/Piracy/wiki/megathread/
@@ -61,3 +61,6 @@
         - icon: /icons/methstreams.png
           href: https://methstreams.ms/
     
+    - brocoflix:
+      - icon: /icons/brocoflix.png
+        href: https://brocoflix.xyz/
