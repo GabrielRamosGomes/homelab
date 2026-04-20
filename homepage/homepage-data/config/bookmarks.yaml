@@ -4,7 +4,7 @@
 
 - Developer Resources:
     - Github:
-        - icon: github.png
+        - icon: si-github
           href: https://github.com/GabrielRamosGomes
     
     - Router:
@@ -14,3 +14,24 @@
     - Docs:
         - icon: homepage.png
           href: https://gethomepage.dev/
+
+    - ChatGPT:
+        - icon: chatgpt.png
+          href: https://chat.openai.com/
+
+- Favorites:
+    - Youtube:
+        - icon: youtube.png
+          href: https://www.youtube.com/
+    
+    - Whatsapp:
+        - icon: whatsapp.png
+          href: https://web.whatsapp.com/
+
+    - Twitter:
+        - icon: twitter.png
+          href: https://twitter.com/
+
+    - Gmail:
+        - icon: gmail.png
+          href: https://mail.google.com/mail/u/0/#inbox
