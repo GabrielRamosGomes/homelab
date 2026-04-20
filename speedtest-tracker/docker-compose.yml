@@ -1,0 +1,23 @@
+services:
+    speedtest-tracker:
+        image: lscr.io/linuxserver/speedtest-tracker:latest
+        restart: unless-stopped
+        container_name: ${SERVICE}
+        environment:
+            - PUID=${PUID} 
+            - PGID=${PGID}
+            - APP_KEY=${APP_KEY}
+            - APP_URL=${APP_URL}
+            - ADMIN_NAME=${ADMIN_NAME}
+            - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+            - ADMIN_EMAIL=${ADMIN_EMAIL}
+            - DB_CONNECTION=sqlite
+            - SPEEDTEST_SCHEDULE=0 */2 * * * # Every 2h
+            - APP_TIMEZONE=Europe/Lisbon
+        volumes:
+            - ./${SERVICE}-data:/config
+        labels:
+          - "docktail.service.enable=true"
+          - "docktail.service.name=${SERVICE}"
+          - "docktail.service.port=80"
+          - "docktail.service.service-protocol=https"

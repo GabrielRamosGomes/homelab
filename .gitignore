@@ -4,12 +4,6 @@
 .env.production.local
 .env.local
 
-# Tailscale configuration and state files
-tailscale/
-
-# Portainer
-portainer/data
-
 # Filebrowser
 filebrowser/filebrowser_db/
 filebrowser/filebrowser_config/
@@ -28,3 +22,6 @@ vaultwarden/vaultwarden-data
 
 # ConvertX
 convertx/convertx-data
+
+# speedtest-tracker
+speedtest-tracker/speedtest-tracker-data
