@@ -34,7 +34,7 @@
         container: adguardhome
         widget:
           type: adguard
-          url: http://100.68.217.111/
+          url: {{HOMEPAGE_VAR_ADGUARD_URL}}
           username: {{HOMEPAGE_VAR_ADGUARD_USER}}
           password: {{HOMEPAGE_VAR_ADGUARD_PASSWORD}}
 

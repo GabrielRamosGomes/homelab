@@ -1,58 +1,26 @@
-configs:
-  ts-serve:
-    content: |
-      {"TCP":{"443":{"HTTPS":true}},
-      "Web":{"${TS_CERT_DOMAIN}:443":
-          {"Handlers":{"/":
-          {"Proxy":"http://127.0.0.1:80"}}}},
-      "AllowFunnel":{"${TS_CERT_DOMAIN}:443":false}}
-
 services:
-  tailscale:
-    image: tailscale/tailscale:latest
-    container_name: tailscale-${SERVICE}
-    hostname: ${SERVICE}
-    environment:
-      - TS_AUTHKEY=${TS_AUTHKEY}
-      - TS_STATE_DIR=/var/lib/tailscale
-      - TS_USERSPACE=false
-      - TS_ENABLE_HEALTH_CHECK=true
-      - TS_SERVE_CONFIG=/config/serve.json
-      - TS_LOCAL_ADDR_PORT=127.0.0.1:41234
-      - TS_AUTH_ONCE=true
-    configs:
-      - source: ts-serve
-        target: /config/serve.json
+  docktail:
+    image: ghcr.io/marvinvr/docktail:latest
+    container_name: docktail-${SERVICE}
+    restart: unless-stopped
     volumes:
-      - ./tailscale/config:/config
-      - ./tailscale/ts/state:/var/lib/tailscale
-    devices:
-      - /dev/net/tun:/dev/net/tun
-    cap_add:
-      - net_admin
-    ports:
-      - "0.0.0.0:53:53/udp"
-      - "0.0.0.0:53:53/tcp"
-    healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:41234/healthz"]
-      interval: 1m
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-    restart: always
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/tailscale:/var/run/tailscale
+    environment:
+      - TAILSCALE_OAUTH_CLIENT_ID=${TAILSCALE_OAUTH_CLIENT_ID}
+      - TAILSCALE_OAUTH_CLIENT_SECRET=${TAILSCALE_OAUTH_CLIENT_SECRET}
 
   adguardhome:
     image: adguard/adguardhome:latest
-    network_mode: service:tailscale
     container_name: ${SERVICE}
+    network_mode: host
     environment:
       - TZ=Europe/Lisbon
     volumes:
       - ./${SERVICE}-data/work:/opt/adguardhome/work
       - ./${SERVICE}-data/config:/opt/adguardhome/conf
     depends_on:
-      tailscale:
-        condition: service_healthy
+      - docktail
     healthcheck:
       test: ["CMD", "pgrep", "-f", "${SERVICE}"]
       interval: 1m
@@ -60,3 +28,8 @@ services:
       retries: 3
       start_period: 30s
     restart: always
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=${SERVICE}"
+      - "docktail.service.port=80"
+      - "docktail.service.service-protocol=https"
