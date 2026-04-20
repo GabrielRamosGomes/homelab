@@ -3,4 +3,8 @@
 .env.test.local
 .env.production.local
 .env.local
-.env.main
+
+
+# Portainer
+/portainer/data
+/portainer/tailscale
