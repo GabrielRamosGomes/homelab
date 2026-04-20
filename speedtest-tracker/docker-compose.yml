@@ -12,7 +12,7 @@ services:
             - ADMIN_PASSWORD=${ADMIN_PASSWORD}
             - ADMIN_EMAIL=${ADMIN_EMAIL}
             - DB_CONNECTION=sqlite
-            - SPEEDTEST_SCHEDULE=0 */2 * * * # Every 2h
+            - SPEEDTEST_SCHEDULE=17 */2 * * * # Every 2h at 17 minutes past the hour
             - APP_TIMEZONE=${TIMEZONE}
             - DISPLAY_TIMEZONE=${TIMEZONE}
             - TZ=${TIMEZONE}
