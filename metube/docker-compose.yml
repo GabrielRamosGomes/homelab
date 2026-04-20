@@ -2,6 +2,7 @@ services:
   docktail:
     image: ghcr.io/marvinvr/docktail:latest
     restart: unless-stopped
+    container_name: docktail-${SERVICE}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/run/tailscale:/var/run/tailscale
@@ -31,3 +32,4 @@ services:
       - "docktail.service.enable=true"
       - "docktail.service.name=${SERVICE}"
       - "docktail.service.port=8081"
+      - "docktail.service.service-protocol=https"
