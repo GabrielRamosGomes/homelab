@@ -5,9 +5,17 @@
 title: Homelab Dashboard
 theme: dark
 
+target: _self
 useEqualHeights: true
 disableCollapse: true
 headerStyle: clean
+
+quicklaunch:
+  showSearchSuggestions: true
+  searchDescriptions: true
+  provider: duckduckgo
+  target: _self
+  mobileButtonPosition: top-right
 
 background:
   image: /images/background.png
@@ -31,5 +39,4 @@ layout:
     header: true
     style: column
     columns: 2
-
 
