@@ -37,18 +37,18 @@ services:
       start_period: 10s
     restart: always
 
-  portainer:
-    image: portainer/portainer-ce:lts
+  filebrowser:
+    image: filebrowser/filebrowser:latest
     container_name: ${SERVICE}
     network_mode: service:tailscale
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Lisbon
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./data:/data
+      - /mnt/storage:/srv
+      - ./filebrowser_db:/database
+      - ./filebrowser_config:/config
+    environment:
+      - FB_ROOT=/srv
+      - FB_DATABASE=/database/filebrowser.db
     depends_on:
       tailscale:
-        condition: service_healthy
+          condition: service_healthy
     restart: always

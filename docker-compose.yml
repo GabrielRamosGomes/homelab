@@ -1,2 +1,0 @@
-include:
-  - ./portainer/docker-compose.yml

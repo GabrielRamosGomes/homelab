@@ -7,3 +7,8 @@
 # Portainer
 /portainer/data
 /portainer/tailscale
+
+# Filebrowser
+filebrowser/filebrowser_db/
+filebrowser/filebrowser_config/
+filebrowser/tailscale
