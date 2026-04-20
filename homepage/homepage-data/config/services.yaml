@@ -26,7 +26,6 @@
           username: {{HOMEPAGE_VAR_DOCKHAND_USER}}
           password: {{HOMEPAGE_VAR_DOCKHAND_PASSWORD}}
 
-
 - Network:
     - AdGuard:
         href: http://100.68.217.111/
@@ -48,5 +47,3 @@
           deviceid: {{HOMEPAGE_VAR_TS_DEVICE_ID}}
           url: https://login.tailscale.com/admin/machines
           key: {{HOMEPAGE_VAR_TS_API_KEY}}
-    
-      
