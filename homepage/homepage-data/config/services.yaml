@@ -20,6 +20,12 @@
         icon: metube
         container: metube
 
+    - ConvertX:
+        href: {{HOMEPAGE_VAR_CONVERTX_URL}}
+        description: Media converter.
+        icon: convertx
+        container: convertx
+
 - Management:    
     - Dockhand:
         href: {{HOMEPAGE_VAR_DOCKHAND_URL}}

@@ -1,0 +1,16 @@
+services:
+  convertx:
+    image: ghcr.io/c4illin/convertx
+    container_name: ${SERVICE}
+    restart: unless-stopped
+    environment:
+      - ALLOW_UNAUTHENTICATED=true
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./${SERVICE}-data:/app/data
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=${SERVICE}"
+      - "docktail.service.port=3000"
+      - "docktail.service.service-protocol=https"
