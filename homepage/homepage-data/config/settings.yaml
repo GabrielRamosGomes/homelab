@@ -14,12 +14,10 @@ quicklaunch:
   showSearchSuggestions: true
   searchDescriptions: true
   provider: duckduckgo
-  target: _self
   mobileButtonPosition: top-right
 
 background:
   image: /images/background.png
-  blur: sm
   saturate: 120
   brightness: 40
   opacity: 20

@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/bookmarks
 
-- Developer Resources:
+- 🖥️ Developer Resources:
     - Github:
         - icon: si-github
           href: https://github.com/GabrielRamosGomes
@@ -19,7 +19,7 @@
         - icon: chatgpt.png
           href: https://chat.openai.com/
 
-- Favorites:
+- ⭐ Favorites:
     - Youtube:
         - icon: youtube.png
           href: https://www.youtube.com/
@@ -39,3 +39,25 @@
     - Google Docs:
         - icon: google-docs.png
           href: https://docs.google.com/document/u/0/
+
+- 🏴‍☠️ Sailing the 7 Seas:
+    - Megathread:
+        - icon: reddit.png
+          href: https://www.reddit.com/r/Piracy/wiki/megathread/
+
+    - AnimeKai:
+        - icon: /icons/animekai.png
+          href: https://animekai.to/home
+
+    - Repack Games:
+        - icon: /icons/repack-games.png
+          href: https://repack-games.com/
+    
+    - GOG Games:
+        - icon: si-gogdotcom-#dda0dd
+          href: https://gog-games.to/
+
+    - MethStreams:
+        - icon: /icons/methstreams.png
+          href: https://methstreams.ms/
+    
