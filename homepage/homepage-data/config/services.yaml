@@ -22,7 +22,7 @@
         container: dockhand
         widget:
           type: dockhand
-          url: http://100.117.113.81:3000/
+          url: {{HOMEPAGE_VAR_DOCKHAND_URL}}
           username: {{HOMEPAGE_VAR_DOCKHAND_USER}}
           password: {{HOMEPAGE_VAR_DOCKHAND_PASSWORD}}
 
