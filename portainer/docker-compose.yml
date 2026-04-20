@@ -1,0 +1,20 @@
+services:
+  tailscale:
+    image: ${TAILSCALE_IMAGE}
+    container_name: tailscale-${SERVICE}
+    hostname: ${SERVICE}
+    env_file:
+      - .env
+      - ../.env.main
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: ${SERVICE}
+    restart: unless-stopped
+    ports:
+      - "${SERVICE_PORT}:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data
+    env_file:
+      - .env
+      - ../.env.main
