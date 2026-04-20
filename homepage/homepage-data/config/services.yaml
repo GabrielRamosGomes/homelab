@@ -14,7 +14,13 @@
           username: {{HOMEPAGE_VAR_FILEBROWSER_USER}}
           password: {{HOMEPAGE_VAR_FILEBROWSER_PASSWORD}}
 
-- Management:
+    - Metube:
+        href: {{HOMEPAGE_VAR_METUBE_URL}}
+        description: Youtube Downloader.
+        icon: metube
+        container: metube
+
+- Management:    
     - Dockhand:
         href: {{HOMEPAGE_VAR_DOCKHAND_URL}}
         description: Docker management UI.
@@ -25,6 +31,12 @@
           url: {{HOMEPAGE_VAR_DOCKHAND_URL}}
           username: {{HOMEPAGE_VAR_DOCKHAND_USER}}
           password: {{HOMEPAGE_VAR_DOCKHAND_PASSWORD}}
+    
+    - Vaultwarden:
+        href: {{HOMEPAGE_VAR_VAULTWARDEN_URL}}
+        description: Password manager.
+        icon: vaultwarden
+        container: vaultwarden
 
 - Network:
     - AdGuard:
@@ -42,8 +54,8 @@
         href: https://login.tailscale.com/admin/machines
         description: Tailscale admin panel.
         icon: tailscale
-        widget:
-          type: tailscale
-          deviceid: {{HOMEPAGE_VAR_TS_DEVICE_ID}}
-          url: https://login.tailscale.com/admin/machines
-          key: {{HOMEPAGE_VAR_TS_API_KEY}}
+        # widget:
+        #   type: tailscale
+        #   deviceid: {{HOMEPAGE_VAR_TS_DEVICE_ID}}
+        #   url: https://login.tailscale.com/admin/machines
+        #   key: {{HOMEPAGE_VAR_TS_API_KEY}}
