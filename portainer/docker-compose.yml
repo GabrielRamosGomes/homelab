@@ -9,7 +9,7 @@ configs:
 
 services:
   tailscale:
-    image: ${TAILSCALE_IMAGE}
+    image: tailscale/tailscale:latest
     container_name: tailscale-${SERVICE}
     hostname: ${SERVICE}
     environment:
