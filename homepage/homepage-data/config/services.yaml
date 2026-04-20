@@ -1,0 +1,52 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Media:
+    - Filebrowser:
+        href: http://100.69.18.61/files/
+        description: Web based file manager.
+        icon: filebrowser
+        container: filebrowser
+        widget:
+          type: filebrowser
+          url: http://100.69.18.61/
+          username: {{HOMEPAGE_VAR_FILEBROWSER_USER}}
+          password: {{HOMEPAGE_VAR_FILEBROWSER_PASSWORD}}
+
+- Management:
+    - Dockhand:
+        href: http://100.117.113.81:3000/
+        description: Docker management UI.
+        icon: dockhand
+        container: dockhand
+        widget:
+          type: dockhand
+          url: http://100.117.113.81:3000/
+          username: {{HOMEPAGE_VAR_DOCKHAND_USER}}
+          password: {{HOMEPAGE_VAR_DOCKHAND_PASSWORD}}
+
+
+- Network:
+    - AdGuard:
+        href: http://100.68.217.111/
+        description: DNS and adblocking.
+        icon: adguard-home
+        container: adguardhome
+        widget:
+          type: adguard
+          url: http://100.68.217.111/
+          username: {{HOMEPAGE_VAR_ADGUARD_USER}}
+          password: {{HOMEPAGE_VAR_ADGUARD_PASSWORD}}
+
+    - Tailscale:
+        href: https://login.tailscale.com/admin/machines
+        description: Tailscale admin panel.
+        icon: tailscale
+        widget:
+          type: tailscale
+          deviceid: {{HOMEPAGE_VAR_TS_DEVICE_ID}}
+          url: https://login.tailscale.com/admin/machines
+          key: {{HOMEPAGE_VAR_TS_API_KEY}}
+    
+      

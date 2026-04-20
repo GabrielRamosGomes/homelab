@@ -4,19 +4,21 @@
 .env.production.local
 .env.local
 
+# Tailscale configuration and state files
+tailscale/
+
 # Portainer
 portainer/data
-portainer/tailscale
 
 # Filebrowser
 filebrowser/filebrowser_db/
 filebrowser/filebrowser_config/
-filebrowser/tailscale
 
 # Dockhand
 dockhand/dockhand-data
-dockhand/tailscale
 
 # Adguard Home
 adguardhome/adguardhome-data
-adguardhome/tailscale
+
+# Homepage
+homepage/homepage-data/config/logs
