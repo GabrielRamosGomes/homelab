@@ -4,7 +4,7 @@
 
 - Media:
     - Filebrowser:
-        href: http://100.69.18.61/files/
+        href: {{HOMEPAGE_VAR_FILEBROWSER_URL}}
         description: Web based file manager.
         icon: filebrowser
         container: filebrowser
@@ -16,7 +16,7 @@
 
 - Management:
     - Dockhand:
-        href: http://100.117.113.81:3000/
+        href: {{HOMEPAGE_VAR_DOCKHAND_URL}}
         description: Docker management UI.
         icon: dockhand
         container: dockhand
@@ -28,7 +28,7 @@
 
 - Network:
     - AdGuard:
-        href: http://100.68.217.111/
+        href: {{HOMEPAGE_VAR_ADGUARD_URL}}
         description: DNS and adblocking.
         icon: adguard-home
         container: adguardhome
