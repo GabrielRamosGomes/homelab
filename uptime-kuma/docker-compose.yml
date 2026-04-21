@@ -5,6 +5,7 @@ services:
     restart: always
     volumes:
       - ./${SERVICE}-data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - TZ=${TZ}
       - UMASK=0022
