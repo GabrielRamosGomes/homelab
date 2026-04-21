@@ -38,6 +38,15 @@
           username: {{HOMEPAGE_VAR_DOCKHAND_USER}}
           password: {{HOMEPAGE_VAR_DOCKHAND_PASSWORD}}
     
+    - Uptime Kuma:
+        href: {{HOMEPAGE_VAR_UPTIME_KUMA_URL}}
+        description: Uptime monitoring.
+        icon: uptime-kuma
+        container: uptime-kuma
+        # widget:
+        #   type: uptimekuma
+        #   url: {{HOMEPAGE_VAR_UPTIME_KUMA_URL}}
+    
     - Vaultwarden:
         href: {{HOMEPAGE_VAR_VAULTWARDEN_URL}}
         description: Password manager.
