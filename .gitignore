@@ -25,3 +25,6 @@ convertx/convertx-data
 
 # speedtest-tracker
 speedtest-tracker/speedtest-tracker-data
+
+# Uptime Kuma
+uptime-kuma/uptime-kuma-data

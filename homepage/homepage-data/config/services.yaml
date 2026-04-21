@@ -43,9 +43,10 @@
         description: Uptime monitoring.
         icon: uptime-kuma
         container: uptime-kuma
-        # widget:
-        #   type: uptimekuma
-        #   url: {{HOMEPAGE_VAR_UPTIME_KUMA_URL}}
+        widget:
+          type: uptimekuma
+          url: {{HOMEPAGE_VAR_UPTIME_KUMA_URL}}
+          slug: homelab
     
     - Vaultwarden:
         href: {{HOMEPAGE_VAR_VAULTWARDEN_URL}}
