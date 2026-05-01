@@ -76,7 +76,11 @@
           url: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_URL}}
           version: 2
           key: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_API_KEY}}
-         
+
+    - UGREEN DH2300:
+        href: {{HOMEPAGE_VAR_NAS_URL}}
+        description: NAS management interface.
+        icon: sh-ugreen-nas
 
     - Tailscale:
         href: https://login.tailscale.com/admin/machines
