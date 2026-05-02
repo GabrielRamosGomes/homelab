@@ -3,7 +3,7 @@ services:
     image: filebrowser/filebrowser:latest
     container_name: ${SERVICE}
     volumes:
-      - /mnt/storage:/srv
+      - /mnt/nas/filebrowser:/srv
       - ./filebrowser_db:/database
       - ./filebrowser_config:/config
     environment:
