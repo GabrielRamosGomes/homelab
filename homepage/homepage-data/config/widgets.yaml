@@ -3,13 +3,20 @@
 # https://gethomepage.dev/configs/info-widgets/
 
 - resources:
+    label: Raspberry Pi
     cpu: true
     cputemp: true
     uptime: true
-
-- resources:
     disk: /
     memory: true
+
+- resources:
+    label: NAS Disks
+    expanded: true
+    disk:
+        - /mnt/nas/filebrowser
+        - /mnt/nas/jellyfin
+        - /mnt/nas/immich
 
 - search:
     provider: duckduckgo

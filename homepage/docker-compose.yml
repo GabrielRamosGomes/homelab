@@ -9,6 +9,7 @@ services:
       - ./assets/images:/app/public/images
       - ./assets/icons:/app/public/icons
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /mnt/nas:/mnt/nas:ro
     healthcheck:
       test: ["CMD", "pgrep", "-f", "next-server"]
       interval: 1m
