@@ -1,0 +1,116 @@
+x-common-keys: &common-keys
+  restart: unless-stopped
+  logging:
+    driver: json-file
+  environment: &common-env
+    PUID: ${PUID}
+    PGID: ${PGID}
+    TZ: ${TZ}
+
+services:
+  qbittorrent: # Downloads
+    <<: *common-keys
+    container_name: qbittorrent
+    image: ghcr.io/hotio/qbittorrent:latest
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    environment:
+      <<: *common-env
+      WEBUI_PORT: 8080
+      TORRENTING_PORT: 6881
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/qbittorrent:/config
+      - /mnt/nas/jellyfin/data:/data
+
+  radarr: # Movies
+    <<: *common-keys
+    container_name: radarr
+    image: ghcr.io/hotio/radarr:latest
+    ports:
+      - 7878:7878
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/radarr:/config
+      - /mnt/nas/jellyfin/data:/data
+
+  sonarr: # TV Shows
+    <<: *common-keys
+    container_name: sonarr
+    image: ghcr.io/hotio/sonarr:latest
+    ports:
+      - 8989:8989
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/sonarr:/config
+      - /mnt/nas/jellyfin/data:/data
+
+  bazarr: # Subtitles
+    <<: *common-keys
+    container_name: bazarr
+    image: ghcr.io/hotio/bazarr:latest
+    ports:
+      - 6767:6767
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/bazarr:/config
+      - /mnt/nas/jellyfin/data:/data
+
+  prowlarr: # Indexers
+    <<: *common-keys
+    container_name: prowlarr
+    image: ghcr.io/hotio/prowlarr:latest
+    ports:
+      - 9696:9696
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/prowlarr:/config
+
+  jellyfin: # Media Server
+    <<: *common-keys
+    container_name: jellyfin
+    image: ghcr.io/hotio/jellyfin:latest
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/jellyfin:/config
+      - /mnt/nas/jellyfin/data/media:/data/media:ro
+    ports:
+      - 8096:8096
+
+  seerr: # Request Management
+    <<: *common-keys
+    container_name: seerr
+    image: ghcr.io/seerr-team/seerr:latest
+    init: true
+    ports:
+      - 5055:5055
+    environment:
+      <<: *common-env
+      LOG_LEVEL: info
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1
+      start_period: 20s
+      timeout: 3s
+      interval: 15s
+      retries: 3
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/seerr:/app/config
+
+  flaresolverr:
+    container_name: flaresolverr
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    restart: unless-stopped
+    environment:
+      LOG_LEVEL: info
+      LOG_HTML: false
+      CAPTCHA_SOLVER: none
+      TZ: ${TZ}
+    expose:
+      - 8191
+
+networks:
+  default:
+    name: arr_network
