@@ -47,6 +47,17 @@ services:
       - ./config/sonarr:/config
       - /mnt/nas/jellyfin/data:/data
 
+  sonarr-anime: # Anime
+    <<: *common-keys
+    container_name: sonarr-anime
+    image: ghcr.io/hotio/sonarr:latest
+    ports:
+      - 8990:8989
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/sonarr-anime:/config
+      - /mnt/nas/jellyfin/data:/data
+
   bazarr: # Subtitles
     <<: *common-keys
     container_name: bazarr
@@ -110,6 +121,16 @@ services:
       TZ: ${TZ}
     expose:
       - 8191
+
+  recyclarr: # TRaSH Guides sync for Radarr/Sonarr
+    <<: *common-keys
+    container_name: recyclarr
+    image: ghcr.io/recyclarr/recyclarr:8
+    user: ${PUID}:${PGID}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/recyclarr:/config
+
 
 networks:
   default:
