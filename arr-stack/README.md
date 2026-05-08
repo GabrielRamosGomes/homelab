@@ -9,7 +9,7 @@
 Create necessary folders
 ```bash
 sudo mkdir -p /mnt/nas/jellyfin/{torrents/{tv,movies,music,anime},media/{tv,movies,music,anime}}
-sudo mkdir -p ./config/{qbittorrent,radarr,sonarr,sonarr-anime,bazarr,bazarr-anime,prowlarr,jellyfin,seerr,recyclarr/configs}
+sudo mkdir -p ./config/{qbittorrent,radarr,sonarr,sonarr-anime,bazarr,prowlarr,jellyfin,seerr,recyclarr/configs}
 sudo touch ./config/recyclarr/configs/{radarr.yml,sonarr.yml}
 ```
 
