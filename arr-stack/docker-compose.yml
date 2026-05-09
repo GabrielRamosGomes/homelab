@@ -87,16 +87,17 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config/jellyfin:/config
       - /mnt/nas/jellyfin/data/media:/data/media:ro
-    ports:
-      - 8096:8096
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=jellyfin"
+      - "docktail.service.port=8096"
+      - "docktail.service.service-protocol=https"
 
   seerr: # Request Management
     <<: *common-keys
     container_name: seerr
     image: ghcr.io/seerr-team/seerr:latest
     init: true
-    ports:
-      - 5055:5055
     environment:
       <<: *common-env
       LOG_LEVEL: info
@@ -109,6 +110,11 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./config/seerr:/app/config
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=seerr"
+      - "docktail.service.port=5055"
+      - "docktail.service.service-protocol=https"
 
   flaresolverr:
     container_name: flaresolverr
