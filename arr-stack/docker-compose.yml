@@ -85,7 +85,7 @@ services:
     image: ghcr.io/hotio/jellyfin:latest
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./config/jellyfin:/config
+      - /mnt/nas/jellyfin/config:/config
       - /mnt/nas/jellyfin/data/media:/data/media:ro
     labels:
       - "docktail.service.enable=true"
