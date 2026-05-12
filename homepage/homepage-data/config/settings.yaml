@@ -25,16 +25,44 @@ background:
 layout:
   Network:
     header: true
+    tab: Main
     style: column
     columns: 2
 
   Management:
     header: true
+    tab: Main
     style: column
     columns: 3
 
   Media:
     header: true
+    tab: Main
     style: column
     columns: 2
 
+  ## Jellyfin Tab
+  
+  Collection Management:
+    header: true
+    tab: Jellyfin
+    style: row
+    columns: 4
+
+  Jellyfin Media:
+    header: true
+    tab: Jellyfin
+    style: column
+    columns: 2
+
+  Downloads & Indexers:
+    header: true
+    tab: Jellyfin
+    style: column
+    columns: 2
+
+  Releases:
+    header: true
+    tab: Jellyfin
+    style: column
+    columns: 1

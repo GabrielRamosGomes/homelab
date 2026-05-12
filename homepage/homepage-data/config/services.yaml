@@ -91,3 +91,140 @@
         #   deviceid: {{HOMEPAGE_VAR_TS_DEVICE_ID}}
         #   url: https://login.tailscale.com/admin/machines
         #   key: {{HOMEPAGE_VAR_TS_API_KEY}}
+
+
+# JELLYFIN STUFF
+
+- Jellyfin Media:
+    - Jellyfin:
+        href: {{HOMEPAGE_VAR_JELLYFIN_URL}}
+        description: Media server.
+        icon: jellyfin
+        container: jellyfin
+        widget:
+            type: jellyfin
+            url: {{HOMEPAGE_VAR_JELLYFIN_URL}}
+            key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
+            version: 2
+            enableBlocks: true
+            enableNowPlaying: false
+            enableUser: false
+            showEpisodeNumber: false
+
+    - Seerr:
+        href: {{HOMEPAGE_VAR_SEERR_URL}}
+        description: Request management.
+        icon: seerr
+        container: seerr
+        widget:
+          type: seerr
+          url: {{HOMEPAGE_VAR_SEERR_URL}}
+          key: {{HOMEPAGE_VAR_SEERR_API_KEY}}
+
+- Collection Management:
+    - Radarr:
+        href: {{HOMEPAGE_VAR_RADARR_URL}}
+        description: Movie collection manager.
+        icon: radarr
+        container: radarr
+        widget:
+          type: radarr
+          url: {{HOMEPAGE_VAR_RADARR_URL}}
+          key: {{HOMEPAGE_VAR_RADARR_API_KEY}}
+          fields:
+            - wanted
+            - queued
+            - movies
+    
+    - Sonarr:
+        href: {{HOMEPAGE_VAR_SONARR_URL}}
+        description: TV show collection manager.
+        icon: sonarr
+        container: sonarr
+        widget:
+          type: sonarr
+          url: {{HOMEPAGE_VAR_SONARR_URL}}
+          key: {{HOMEPAGE_VAR_SONARR_API_KEY}}
+          fields:
+            - wanted
+            - queued
+            - series
+
+    - Sonarr Anime:
+        href: {{HOMEPAGE_VAR_SONARR_ANIME_URL}}
+        description: Anime collection manager.
+        icon: sonarr
+        container: sonarr-anime
+        widget:
+          type: sonarr
+          url: {{HOMEPAGE_VAR_SONARR_ANIME_URL}}
+          key: {{HOMEPAGE_VAR_SONARR_ANIME_API_KEY}}
+
+    - Bazarr:
+        href: {{HOMEPAGE_VAR_BAZARR_URL}}
+        description: Subtitle management.
+        icon: bazarr
+        container: bazarr
+        widget:
+          type: bazarr
+          url: {{HOMEPAGE_VAR_BAZARR_URL}}
+          key: {{HOMEPAGE_VAR_BAZARR_API_KEY}}
+
+- Downloads & Indexers:
+    - qBittorrent:
+        href: {{HOMEPAGE_VAR_QBITTORRENT_URL}}
+        description: Torrent downloads.
+        icon: qbittorrent
+        container: qbittorrent
+        widget:
+          type: qbittorrent
+          url: {{HOMEPAGE_VAR_QBITTORRENT_URL}}
+          username: {{HOMEPAGE_VAR_QBITTORRENT_USER}}
+          password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
+          enableLeechProgress: true
+          enableLeechSize: true
+
+    - Prowlarr:
+        href: {{HOMEPAGE_VAR_PROWLARR_URL}}
+        description: Indexer management.
+        icon: prowlarr
+        container: prowlarr
+        widget:
+          type: prowlarr
+          url: {{HOMEPAGE_VAR_PROWLARR_URL}}
+          key: {{HOMEPAGE_VAR_PROWLARR_API_KEY}}
+
+- Releases:
+    - Release Calendar:
+        icon: mdi-calendar-month
+        description: Upcoming movies, TV, and anime.
+        widget:
+          type: calendar
+          view: agenda
+          maxEvents: 12
+          showTime: true
+          previousDays: 1
+          integrations:
+            - type: radarr
+              service_group: Collection Management
+              service_name: Radarr
+              color: amber
+              baseUrl: {{HOMEPAGE_VAR_RADARR_URL}}
+              params:
+                unmonitored: false
+
+            - type: sonarr
+              service_group: Collection Management
+              service_name: Sonarr
+              color: sky
+              baseUrl: {{HOMEPAGE_VAR_SONARR_URL}}
+              params:
+                unmonitored: false
+
+            - type: sonarr
+              service_group: Collection Management
+              service_name: Sonarr Anime
+              color: violet
+              baseUrl: {{HOMEPAGE_VAR_SONARR_ANIME_URL}}
+              params:
+                unmonitored: false
