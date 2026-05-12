@@ -181,8 +181,6 @@
           url: {{HOMEPAGE_VAR_QBITTORRENT_URL}}
           username: {{HOMEPAGE_VAR_QBITTORRENT_USER}}
           password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
-          enableLeechProgress: true
-          enableLeechSize: true
 
     - Prowlarr:
         href: {{HOMEPAGE_VAR_PROWLARR_URL}}
