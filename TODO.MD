@@ -1,6 +1,7 @@
 - [x] Improve jellyfin w/plugins and UI
-- [ ] Setup seedpool private tracker to prowlarr
-- [ ] Migrate currently downloaded media to seedpool
+- [x] Setup seedpool private tracker to prowlarr
+- [x] Migrate currently downloaded media to seedpool
+- [ ] Setup autobrr to autodelete after 10 days to meet seedpool reqs
 - [ ] Add new containers to Kuma
 - [ ] Setup Gotify
 - [ ] Kuma notifications
