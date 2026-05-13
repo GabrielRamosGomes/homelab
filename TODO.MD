@@ -1,0 +1,12 @@
+- [x] Improve jellyfin w/plugins and UI
+- [ ] Setup seedpool private tracker to prowlarr
+- [ ] Migrate currently downloaded media to seedpool
+- [ ] Add new containers to Kuma
+- [ ] Setup Gotify
+- [ ] Kuma notifications
+- [ ] Jellfyfin notifications when downloads are finished
+- [ ] Friends Dashboard
+- [ ] Change filebrowser to quantum filebrowser
+- [ ] Setup autentik
+- [ ] Setup Questaar
+- [ ] Setup immich
