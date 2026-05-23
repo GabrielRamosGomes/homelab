@@ -2,7 +2,7 @@
 - [x] Setup seedpool private tracker to prowlarr
 - [x] Migrate currently downloaded media to seedpool
 - [ ] Setup autobrr to autodelete after 10 days to meet seedpool reqs
-- [ ] Add new containers to Kuma (on goign)
+- [x] Add new containers to Kuma
 - [ ] Setup Gotify - (on going)
 - [ ] Kuma notifications - (on going)
 - [ ] Jellfyfin notifications when downloads are finished
