@@ -24,6 +24,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config/qbittorrent:/config
       - /mnt/nas/jellyfin/data:/data
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8080 || exit 1
+      start_period: 30s
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   radarr: # Movies
     <<: *common-keys
@@ -35,6 +41,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config/radarr:/config
       - /mnt/nas/jellyfin/data:/data
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:7878/ping || exit 1
+      start_period: 30s
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   sonarr: # TV Shows
     <<: *common-keys
@@ -46,6 +58,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config/sonarr:/config
       - /mnt/nas/jellyfin/data:/data
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8989/ping || exit 1
+      start_period: 30s
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   sonarr-anime: # Anime
     <<: *common-keys
@@ -57,6 +75,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config/sonarr-anime:/config
       - /mnt/nas/jellyfin/data:/data
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8989/ping || exit 1
+      start_period: 30s
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   bazarr: # Subtitles
     <<: *common-keys
@@ -68,6 +92,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./config/bazarr:/config
       - /mnt/nas/jellyfin/data:/data
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:6767 || exit 1
+      start_period: 30s
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   prowlarr: # Indexers
     <<: *common-keys
@@ -78,6 +108,12 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./config/prowlarr:/config
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:9696/ping || exit 1
+      start_period: 30s
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   jellyfin: # Media Server
     <<: *common-keys
@@ -92,6 +128,12 @@ services:
       - "docktail.service.name=jellyfin"
       - "docktail.service.port=8096"
       - "docktail.service.service-protocol=https"
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8096/health || exit 1
+      start_period: 40s
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   seerr: # Request Management
     <<: *common-keys
@@ -101,12 +143,6 @@ services:
     environment:
       <<: *common-env
       LOG_LEVEL: info
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1
-      start_period: 20s
-      timeout: 3s
-      interval: 15s
-      retries: 3
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./config/seerr:/app/config
@@ -115,6 +151,12 @@ services:
       - "docktail.service.name=seerr"
       - "docktail.service.port=5055"
       - "docktail.service.service-protocol=https"
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1
+      start_period: 20s
+      timeout: 3s
+      interval: 15s
+      retries: 3
 
   flaresolverr:
     container_name: flaresolverr
