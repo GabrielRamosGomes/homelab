@@ -2,12 +2,13 @@
 - [x] Setup seedpool private tracker to prowlarr
 - [x] Migrate currently downloaded media to seedpool
 - [ ] Setup autobrr to autodelete after 10 days to meet seedpool reqs
-- [ ] Add new containers to Kuma
-- [ ] Setup Gotify
-- [ ] Kuma notifications
+- [ ] Add new containers to Kuma (on goign)
+- [ ] Setup Gotify - (on going)
+- [ ] Kuma notifications - (on going)
 - [ ] Jellfyfin notifications when downloads are finished
 - [ ] Friends Dashboard
 - [ ] Change filebrowser to quantum filebrowser
 - [ ] Setup autentik
 - [ ] Setup Questaar
 - [ ] Setup immich
+- [ ] Maybe expose jellyfin?
