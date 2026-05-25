@@ -4,76 +4,76 @@
 
 - Media:
     - Filebrowser:
-        href: {{HOMEPAGE_VAR_FILEBROWSER_URL}}
+        href: https://filebrowser.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Web based file manager.
         icon: filebrowser
         container: filebrowser
         widget:
           type: filebrowser
-          url: {{HOMEPAGE_VAR_FILEBROWSER_URL}}
+          url: https://filebrowser.{{HOMEPAGE_VAR_TAILNET_NAME}}
           username: {{HOMEPAGE_VAR_FILEBROWSER_USER}}
           password: {{HOMEPAGE_VAR_FILEBROWSER_PASSWORD}}
 
     - Metube:
-        href: {{HOMEPAGE_VAR_METUBE_URL}}
+        href: https://metube.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Youtube Downloader.
         icon: metube
         container: metube
 
     - ConvertX:
-        href: {{HOMEPAGE_VAR_CONVERTX_URL}}
+        href: https://convertx.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Media converter.
         icon: convertx
         container: convertx
 
 - Management:    
     - Dockhand:
-        href: {{HOMEPAGE_VAR_DOCKHAND_URL}}
+        href: https://dockhand.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Docker management UI.
         icon: dockhand
         container: dockhand
         widget:
           type: dockhand
-          url: {{HOMEPAGE_VAR_DOCKHAND_URL}}
+          url: https://dockhand.{{HOMEPAGE_VAR_TAILNET_NAME}}
           username: {{HOMEPAGE_VAR_DOCKHAND_USER}}
           password: {{HOMEPAGE_VAR_DOCKHAND_PASSWORD}}
     
     - Uptime Kuma:
-        href: {{HOMEPAGE_VAR_UPTIME_KUMA_URL}}
+        href: https://uptime-kuma.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Uptime monitoring.
         icon: uptime-kuma
         container: uptime-kuma
         widget:
           type: uptimekuma
-          url: {{HOMEPAGE_VAR_UPTIME_KUMA_URL}}
+          url: https://uptime-kuma.{{HOMEPAGE_VAR_TAILNET_NAME}}
           slug: homelab
     
     - Vaultwarden:
-        href: {{HOMEPAGE_VAR_VAULTWARDEN_URL}}
+        href: https://vaultwarden.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Password manager.
         icon: vaultwarden
         container: vaultwarden
 
 - Network:
     - AdGuard:
-        href: {{HOMEPAGE_VAR_ADGUARD_URL}}
+        href: https://adguardhome.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: DNS and adblocking.
         icon: adguard-home
         container: adguardhome
         widget:
           type: adguard
-          url: {{HOMEPAGE_VAR_ADGUARD_URL}}
+          url: https://adguardhome.{{HOMEPAGE_VAR_TAILNET_NAME}}
           username: {{HOMEPAGE_VAR_ADGUARD_USER}}
           password: {{HOMEPAGE_VAR_ADGUARD_PASSWORD}}
 
     - Speedtest Tracker:
-        href: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_URL}}
+        href: https://speedtest-tracker.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Internet speed monitoring.
         icon: speedtest-tracker
         container: speedtest-tracker
         widget:
           type: speedtest
-          url: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_URL}}
+          url: https://speedtest-tracker.{{HOMEPAGE_VAR_TAILNET_NAME}}
           version: 2
           key: {{HOMEPAGE_VAR_SPEEDTEST_TRACKER_API_KEY}}
 
@@ -97,13 +97,13 @@
 
 - Jellyfin Media:
     - Jellyfin:
-        href: {{HOMEPAGE_VAR_JELLYFIN_URL}}
+        href: https://jellyfin.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Media server.
         icon: jellyfin
         container: jellyfin
         widget:
             type: jellyfin
-            url: {{HOMEPAGE_VAR_JELLYFIN_URL}}
+            url: https://jellyfin.{{HOMEPAGE_VAR_TAILNET_NAME}}
             key: {{HOMEPAGE_VAR_JELLYFIN_API_KEY}}
             version: 2
             enableBlocks: true
@@ -112,13 +112,13 @@
             showEpisodeNumber: false
 
     - Seerr:
-        href: {{HOMEPAGE_VAR_SEERR_URL}}
+        href: https://seerr.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Request management.
         icon: seerr
         container: seerr
         widget:
           type: seerr
-          url: {{HOMEPAGE_VAR_SEERR_URL}}
+          url: https://seerr.{{HOMEPAGE_VAR_TAILNET_NAME}}
           key: {{HOMEPAGE_VAR_SEERR_API_KEY}}
 
 - Collection Management:
