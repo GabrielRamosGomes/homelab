@@ -1,0 +1,20 @@
+{
+  "files.watcherExclude": {
+    "**/data/**": true,
+    "**/media/**": true,
+    "**/torrents/**": true,
+    "**/downloads/**": true,
+    "**/logs/**": true,
+    "**/cache/**": true,
+    "**/.vscode-server/**": true
+  },
+  "search.exclude": {
+    "**/data/**": true,
+    "**/media/**": true,
+    "**/torrents/**": true,
+    "**/downloads/**": true,
+    "**/logs/**": true,
+    "**/cache/**": true,
+    "**/.vscode-server/**": true
+  }
+}
