@@ -31,3 +31,6 @@ uptime-kuma/uptime-kuma-data
 
 # Arr Stack
 arr-stack/config/
+
+# Gotify
+gotify/gotify-data
