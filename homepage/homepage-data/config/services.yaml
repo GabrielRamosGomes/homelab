@@ -47,6 +47,16 @@
           type: uptimekuma
           url: https://uptime-kuma.{{HOMEPAGE_VAR_TAILNET_NAME}}
           slug: homelab
+
+    - Gotify:
+        href: https://gotify.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        description: Notification server.
+        icon: gotify
+        container: gotify
+        widget:
+          type: gotify
+          url: https://gotify.{{HOMEPAGE_VAR_TAILNET_NAME}}
+          key: {{HOMEPAGE_VAR_GOTIFY_API_KEY}}
     
     - Vaultwarden:
         href: https://vaultwarden.{{HOMEPAGE_VAR_TAILNET_NAME}}
