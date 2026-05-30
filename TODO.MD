@@ -5,7 +5,7 @@
 - [x] Add new containers to Kuma
 - [x] Setup Gotify
 - [x] Kuma notifications
-- [x] Jellfyfin notifications when downloads are finished
+- [x] Jellfyfin/Seerr notifications when downloads are finished
 - [ ] Friends Dashboard
 - [ ] Change filebrowser to quantum filebrowser
 - [ ] Setup autentik

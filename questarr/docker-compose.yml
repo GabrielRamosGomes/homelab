@@ -1,0 +1,13 @@
+services:
+  app:
+    image: ghcr.io/doezer/questarr:latest
+    container_name: ${SERVICE}
+    volumes:
+      - ./${SERVICE}-data:/app/data
+    restart: unless-stopped
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=${SERVICE}"
+      - "docktail.service.port=5000"
+      - "docktail.service.protocol=http"
+      - "docktail.service.service-protocol=https"

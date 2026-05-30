@@ -34,3 +34,6 @@ arr-stack/config/
 
 # Gotify
 gotify/gotify-data
+
+# Questarr
+questarr/questarr-data
