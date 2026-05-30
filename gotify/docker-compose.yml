@@ -1,0 +1,15 @@
+services:
+  gotify:
+    image: gotify/server:latest
+    container_name: ${SERVICE}
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ}
+      GOTIFY_DEFAULTUSER_PASS: ${GOTIFY_DEFAULTUSER_PASS}
+    volumes:
+      - ./${SERVICE}-data:/app/data
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=${SERVICE}"
+      - "docktail.service.port=80"
+      - "docktail.service.service-protocol=https"
