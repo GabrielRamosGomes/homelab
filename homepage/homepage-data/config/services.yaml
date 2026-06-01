@@ -13,12 +13,6 @@
           url: https://filebrowser.{{HOMEPAGE_VAR_TAILNET_NAME}}
           username: {{HOMEPAGE_VAR_FILEBROWSER_USER}}
           password: {{HOMEPAGE_VAR_FILEBROWSER_PASSWORD}}
-      
-    - Questarr:
-        href: https://questarr.{{HOMEPAGE_VAR_TAILNET_NAME}}
-        description: Games downloader.
-        icon: questarr
-        container: questarr
     
     - Metube:
         href: https://metube.{{HOMEPAGE_VAR_TAILNET_NAME}}
@@ -242,3 +236,18 @@
               baseUrl: {{HOMEPAGE_VAR_SONARR_ANIME_URL}}
               params:
                 unmonitored: false
+
+
+# QUESTARR STUFF
+- Gaming:
+    - Questarr:
+        href: https://questarr.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        description: Games downloader.
+        icon: questarr
+        container: questarr
+  
+    - qBittorrent Games:
+        href: https://qbittorrent-games.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        description: Torrent downloads for games.
+        icon: qbittorrent
+        container: qbittorrent-games
