@@ -7,7 +7,7 @@
 - [x] Kuma notifications
 - [x] Jellfyfin/Seerr notifications when downloads are finished
 - [ ] Friends Dashboard
-- [ ] Change filebrowser to quantum filebrowser
+- [x] Change filebrowser to quantum filebrowser
 - [ ] Setup autentik
 - [ ] Setup Questaar
 - [ ] Setup immich

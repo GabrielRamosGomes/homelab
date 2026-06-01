@@ -1,23 +1,13 @@
 services:  
   filebrowser:
-    image: filebrowser/filebrowser:latest
+    image: gtstef/filebrowser:stable
     container_name: ${SERVICE}
     volumes:
-      - /mnt/nas/filebrowser:/srv
-      - ./filebrowser_db:/database
-      - ./filebrowser_config:/config
-    environment:
-      - FB_ROOT=/srv
-      - FB_DATABASE=/database/filebrowser.db
-    restart: always
+      -   /mnt/nas/filebrowser:/srv
+      - ./${SERVICE}_data:/home/filebrowser/data
     labels:
       - "docktail.service.enable=true"
       - "docktail.service.name=${SERVICE}"
       - "docktail.service.port=80"
       - "docktail.service.service-protocol=https"
-    healthcheck:
-      test: ["CMD-SHELL", "nc -z localhost 80 || exit 1"]
-      interval: 30s
-      timeout: 3s
-      start_period: 10s
-      retries: 3
+    restart: unless-stopped
