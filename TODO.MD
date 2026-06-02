@@ -12,3 +12,4 @@
 - [ ] Setup Questaar
 - [ ] Setup immich
 - [ ] Maybe expose jellyfin?
+- [ ] Add Docmost

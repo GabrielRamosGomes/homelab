@@ -2,9 +2,9 @@ services:
   vaultwarden:
     image: vaultwarden/server:latest
     container_name: ${SERVICE}
+    env_file:
+      - .env
     restart: unless-stopped
-    environment:
-      - DOMAIN=${VAULTWARDEN_DOMAIN}
     volumes:
       - ./${SERVICE}-data:/data
     labels:
