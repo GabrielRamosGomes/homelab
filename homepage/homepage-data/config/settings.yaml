@@ -23,23 +23,23 @@ background:
   opacity: 20
 
 layout:
-  Network:
+  Access & Security:
     header: true
-    tab: Main
+    tab: Core
     style: column
-    columns: 2
+    columns: 1
 
-  Management:
+  Monitoring:
     header: true
-    tab: Main
+    tab: Core
     style: column
-    columns: 3
+    columns: 1
 
-  Media:
+  Storage & Utilities:
     header: true
-    tab: Main
+    tab: Core
     style: column
-    columns: 2
+    columns: 1
 
   ## Jellyfin Tab
   
