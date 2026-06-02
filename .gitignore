@@ -36,3 +36,8 @@ gotify/gotify-data
 
 # Questarr
 questarr/questarr-data
+
+# Authentik
+authentik/authentik-data
+authentik/certs
+authentik/custom-templates
