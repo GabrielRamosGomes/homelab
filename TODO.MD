@@ -8,7 +8,7 @@
 - [x] Jellfyfin/Seerr notifications when downloads are finished
 - [ ] Friends Dashboard
 - [x] Change filebrowser to quantum filebrowser
-- [ ] Setup autentik (on going)
+- [x] Setup autentik
 - [ ] Setup Questaar
 - [ ] Setup immich
 - [ ] Maybe expose jellyfin?
