@@ -59,6 +59,17 @@
         icon: vaultwarden
         container: vaultwarden
 
+    - Authentik:
+        href: https://authentik.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        description: Identity provider and SSO.
+        icon: authentik
+        container: authentik-server
+        widget:
+            type: authentik
+            url: https://authentik.{{HOMEPAGE_VAR_TAILNET_NAME}}
+            key: {{HOMEPAGE_VAR_AUTHENTIK_API_KEY}}
+            version: 2
+
 - Network:
     - AdGuard:
         href: https://adguardhome.{{HOMEPAGE_VAR_TAILNET_NAME}}
