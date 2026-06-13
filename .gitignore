@@ -41,3 +41,6 @@ questarr/questarr-data
 authentik/authentik-data
 authentik/certs
 authentik/custom-templates
+
+# Immich
+immich/postgres

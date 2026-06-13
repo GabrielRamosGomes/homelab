@@ -10,6 +10,6 @@
 - [x] Change filebrowser to quantum filebrowser
 - [x] Setup autentik
 - [ ] Setup Questaar
-- [ ] Setup immich
+- [x] Setup immich
 - [ ] Maybe expose jellyfin?
 - [ ] Add Docmost
