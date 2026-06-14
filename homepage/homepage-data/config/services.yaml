@@ -93,6 +93,17 @@
         icon: filebrowser
         container: filebrowser
 
+    - Immich:
+        href: https://immich.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        description: Self-hosted photo and video backup solution.
+        icon: immich
+        container: immich_server
+        widget:
+          type: immich
+          url: https://immich.{{HOMEPAGE_VAR_TAILNET_NAME}}
+          key: {{HOMEPAGE_VAR_IMMICH_API_KEY}}
+          version: 2
+
     - ConvertX:
         href: https://convertx.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Media converter.
