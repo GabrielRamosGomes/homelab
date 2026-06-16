@@ -104,6 +104,12 @@
           key: {{HOMEPAGE_VAR_IMMICH_API_KEY}}
           version: 2
 
+    - Docmost:
+        href: https://docmost.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        description: Self-hosted documentation platform.
+        icon: docmost
+        container: docmost
+
     - ConvertX:
         href: https://convertx.{{HOMEPAGE_VAR_TAILNET_NAME}}
         description: Media converter.

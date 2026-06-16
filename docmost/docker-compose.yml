@@ -1,0 +1,44 @@
+services:
+  docmost:
+    image: docmost/docmost:latest
+    container_name: ${SERVICE}
+    depends_on:
+      - db
+      - redis
+    environment:
+      APP_URL: 'https://docmost.${TAILNET}'
+      APP_SECRET: '${APP_SECRET}'
+      DATABASE_URL: 'postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}'
+      REDIS_URL: 'redis://redis:6379'
+    restart: unless-stopped
+    volumes:
+      - docmost:/app/data/storage
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=${SERVICE}"
+      - "docktail.service.port=3000"
+      - "docktail.service.service-protocol=https"
+
+  db:
+    image: postgres:18
+    container_name: ${SERVICE}-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql
+
+  redis:
+    image: redis:8
+    container_name: ${SERVICE}-redis
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory-policy", "noeviction"]
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+volumes:
+  docmost:
+  db_data:
+  redis_data:

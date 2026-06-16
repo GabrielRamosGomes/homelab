@@ -12,4 +12,5 @@
 - [ ] Setup Questaar
 - [x] Setup immich
 - [ ] Maybe expose jellyfin?
-- [ ] Add Docmost
+- [x] Add Docmost
+  - [ ] Add Wiki with most common issues
