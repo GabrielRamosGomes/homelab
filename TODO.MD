@@ -13,4 +13,5 @@
 - [x] Setup immich
 - [ ] Maybe expose jellyfin?
 - [x] Add Docmost
-  - [ ] Add Wiki with most common issues
+  - [x] Add Wiki with most common issues
+- [ ] Grafana/Prometheus

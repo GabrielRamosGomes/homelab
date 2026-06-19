@@ -12,12 +12,12 @@ fi
 source "$ENV_FILE"
 
 mountpoint -q /mnt/nas/filebrowser || mount -t cifs "//$NAS_IP/filebrowser" /mnt/nas/filebrowser \
-  -o credentials=/etc/samba/nas-credentials,uid=1000,gid=1000,iocharset=utf8,vers=3.0
+  -o credentials=/etc/samba/nas-credentials,uid=1000,gid=1000,iocharset=utf8,vers=3.1.1
 
 mountpoint -q /mnt/nas/immich || mount -t cifs "//$NAS_IP/immich" /mnt/nas/immich \
-  -o credentials=/etc/samba/nas-credentials,uid=1000,gid=1000,iocharset=utf8,vers=3.0
+  -o credentials=/etc/samba/nas-credentials,uid=1000,gid=1000,iocharset=utf8,vers=3.1.1
 
-mountpoint -q /mnt/nas/jellyfin || mount -t cifs "//$NAS_IP/jellyfin" /mnt/nas/jellyfin \
-  -o credentials=/etc/samba/nas-credentials,uid=1000,gid=1000,iocharset=utf8,vers=3.1.1,nobrl,cache=strict
+mountpoint -q /mnt/nas/jellyfin || mount -t cifs //192.168.1.102/jellyfin /mnt/nas/jellyfin \
+  -o credentials=/etc/samba/nas-credentials,uid=1000,gid=1000,iocharset=utf8,vers=3.1.1,nobrl,cache=loose,serverino
 
 echo "NAS shares mounted successfully."
