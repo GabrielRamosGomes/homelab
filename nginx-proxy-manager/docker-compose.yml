@@ -1,0 +1,18 @@
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:2.15.1'
+    container_name: ${SERVICE}
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ}
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./${SERVICE}-data:/data
+      - ./${SERVICE}-letsencrypt:/etc/letsencrypt
+    labels:
+      - "docktail.service.enable=true"
+      - "docktail.service.name=${SERVICE}"
+      - "docktail.service.port=81"
+      - "docktail.service.service-protocol=https"
