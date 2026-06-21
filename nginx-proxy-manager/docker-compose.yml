@@ -16,3 +16,9 @@ services:
       - "docktail.service.name=${SERVICE}"
       - "docktail.service.port=81"
       - "docktail.service.service-protocol=https"
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true

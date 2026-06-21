@@ -134,6 +134,9 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+    networks:
+      - default
+      - proxy_network
 
   seerr: # Request Management
     <<: *common-keys
@@ -183,3 +186,5 @@ services:
 networks:
   default:
     name: arr_network
+  proxy_network:
+    external: true
