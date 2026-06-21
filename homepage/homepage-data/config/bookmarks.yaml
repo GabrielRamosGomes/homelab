@@ -49,9 +49,9 @@
         - icon: /icons/repack-games.png
           href: https://repack-games.com/
     
-    - GOG Games:
-        - icon: si-gogdotcom-#dda0dd
-          href: https://gog-games.to/
+    - Seedpool:
+        - icon: /icons/seedpool.ico
+          href: https://seedpool.org/
 
     - MethStreams:
         - icon: /icons/methstreams.png
