@@ -14,9 +14,7 @@
     label: NAS Disks
     expanded: true
     disk:
-        - /mnt/nas/filebrowser
         - /mnt/nas/jellyfin
-        - /mnt/nas/immich
 
 - search:
     provider: duckduckgo
