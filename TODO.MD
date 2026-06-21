@@ -11,7 +11,7 @@
 - [x] Setup autentik
 - [ ] Setup Questaar
 - [x] Setup immich
-- [ ] Expose jellyfin with nginx proxy manager + duckdns
+- [x] Expose jellyfin with nginx proxy manager
 - [x] Add Docmost
   - [x] Add Wiki with most common issues
 - [ ] Grafana/Prometheus
