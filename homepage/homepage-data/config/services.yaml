@@ -161,6 +161,16 @@
           url: https://seerr.{{HOMEPAGE_VAR_TAILNET_NAME}}
           key: {{HOMEPAGE_VAR_SEERR_API_KEY}}
 
+    - JellyStat:
+        href: https://jellystat.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        description: Jellyfin statistics.
+        icon: jellystat
+        container: jellystat
+        widget:
+          type: jellystat
+          url: https://jellystat.{{HOMEPAGE_VAR_TAILNET_NAME}}
+          key: {{HOMEPAGE_VAR_JELLYSTAT_API_KEY}}
+
 - Collection Management:
     - Radarr:
         href: {{HOMEPAGE_VAR_RADARR_URL}}

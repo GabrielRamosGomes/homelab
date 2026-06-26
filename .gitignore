@@ -48,3 +48,7 @@ immich/postgres
 # Nginx Proxy Manager
 nginx-proxy-manager/nginx-proxy-manager-data
 nginx-proxy-manager/nginx-proxy-manager-letsencrypt
+
+# Jellystat
+jellystat/jellystat-backup-data
+jellystat/jellystat-postgres
