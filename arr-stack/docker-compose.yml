@@ -119,6 +119,9 @@ services:
     <<: *common-keys
     container_name: jellyfin
     image: ghcr.io/hotio/jellyfin:latest
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /mnt/nas/jellyfin/config:/config

@@ -1,7 +1,7 @@
 - [x] Improve jellyfin w/plugins and UI
 - [x] Setup seedpool private tracker to prowlarr
 - [x] Migrate currently downloaded media to seedpool
-- [ ] Setup autobrr to autodelete after 15 days
+- [ ] Setup autobrr
 - [x] Add new containers to Kuma
 - [x] Setup Gotify
 - [x] Kuma notifications
@@ -15,3 +15,5 @@
 - [x] Add Docmost
   - [x] Add Wiki with most common issues
 - [ ] Grafana/Prometheus
+- [x] Add Jellystat
+- [ ] Add Restic for backups
