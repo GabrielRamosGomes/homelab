@@ -17,3 +17,4 @@
 - [ ] Grafana/Prometheus
 - [x] Add Jellystat
 - [ ] Add Restic for backups
+- [ ] Pterodactyl from game servers
