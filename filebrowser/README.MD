@@ -19,5 +19,3 @@ After updating permissions restart the service:
 ```bash
 docker compose up -d --no-deps --force-recreate filebrowser
 ```
-
-That's it.
