@@ -3,7 +3,7 @@ services:
     image: gtstef/filebrowser:stable
     container_name: ${SERVICE}
     volumes:
-      -   /mnt/nas/filebrowser:/srv
+      - /mnt/nas/filebrowser:/srv
       - ./${SERVICE}_data:/home/filebrowser/data
     labels:
       - "docktail.service.enable=true"

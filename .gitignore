@@ -36,6 +36,7 @@ gotify/gotify-data
 
 # Questarr
 questarr/questarr-data
+questarr/config
 
 # Authentik
 authentik/authentik-data

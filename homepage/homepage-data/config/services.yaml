@@ -287,7 +287,13 @@
         container: questarr
   
     - qBittorrent Games:
-        href: https://qbittorrent-games.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        href: {{HOMEPAGE_VAR_GAMES_QBITTORRENT_URL}}
         description: Torrent downloads for games.
         icon: qbittorrent
         container: qbittorrent-games
+        widget:
+          type: qbittorrent
+          url: {{HOMEPAGE_VAR_GAMES_QBITTORRENT_URL}}
+          username: {{HOMEPAGE_VAR_GAMES_QBITTORRENT_USER}}
+          password: {{HOMEPAGE_VAR_GAMES_QBITTORRENT_PASSWORD}}
+          # zTmBA26Ab
