@@ -99,7 +99,7 @@
         icon: sh-ugreen-nas
 
     - Filebrowser:
-        href: https://filebrowser.{{HOMEPAGE_VAR_TAILNET_NAME}}
+        href: https://filebrowser.{{HOMEPAGE_VAR_DOMAIN_NAME}}
         description: Web based file manager.
         icon: filebrowser
         container: filebrowser
