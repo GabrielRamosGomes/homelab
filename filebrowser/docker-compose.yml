@@ -5,11 +5,6 @@ services:
     volumes:
       - /mnt/nas/filebrowser:/srv
       - ./${SERVICE}_data:/home/filebrowser/data
-    labels:
-      - "docktail.service.enable=true"
-      - "docktail.service.name=${SERVICE}"
-      - "docktail.service.port=80"
-      - "docktail.service.service-protocol=https"
     restart: unless-stopped
     networks:
       - proxy_network
