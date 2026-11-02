@@ -29,6 +29,26 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+    
+  qbit_manage: # Torrent cleanup
+    <<: *common-keys
+    container_name: qbit_manage
+    image: ghcr.io/stuffanthings/qbit_manage:latest
+    environment:
+      <<: *common-env
+      QBT_SCHEDULE: 1440 # minutes, so once a day
+      QBT_TAG_NOHARDLINKS: "true"
+      QBT_WEB_SERVER: "true"
+      QBT_PORT: 8181
+      QBT_SHARE_LIMITS: "true"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config/qbit_manage:/config
+      - /mnt/nas/jellyfin/data:/data
+    ports:
+      - 8181:8181
+    depends_on:
+      - qbittorrent
 
   radarr: # Movies
     <<: *common-keys

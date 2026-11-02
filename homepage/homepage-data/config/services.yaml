@@ -231,6 +231,12 @@
           url: {{HOMEPAGE_VAR_QBITTORRENT_URL}}
           username: {{HOMEPAGE_VAR_QBITTORRENT_USER}}
           password: {{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}
+    
+    - Qbit Manage:
+        href: {{HOMEPAGE_VAR_QBIT_MANAGE_URL}}
+        description: Torrent manager
+        icon: qbitmanage
+        container: qbit_manage
 
     - Prowlarr:
         href: {{HOMEPAGE_VAR_PROWLARR_URL}}
@@ -241,6 +247,8 @@
           type: prowlarr
           url: {{HOMEPAGE_VAR_PROWLARR_URL}}
           key: {{HOMEPAGE_VAR_PROWLARR_API_KEY}}
+
+
 
 - Releases:
     - Release Calendar:
